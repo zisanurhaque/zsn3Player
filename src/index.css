@@ -1,13 +1,234 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: bahnschrift;
+  font-weight: 300;
+  color: rgb(60, 61, 88);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+  float: left;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(45deg, rgb(72, 36, 102), rgb(21, 28, 92));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio_player{
+  float: left;
+  width: 400px;
+  height: 650px;
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: 50px;
+}
+
+.audio_player .image{
+  width: 100%;
+  height: 45%;
+  background: rgb(223, 223, 223);
+  border-radius: 20px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.audio_player .image img{
+  float: left;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.audio_player .timeline{
+  float: left;
+  color: rgb(60, 61, 88);
+  margin-top: 25px;
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.audio_player .info{
+  float: left;
+  width: 100%;
+  height: 15%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audio_player .info .contents{
+  float: left;
+  width: 85%;
+}
+
+.audio_player .info .icon{
+  font-size: 30px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio_player .info .icon i{
+  color: rgb(203, 207, 221);
+}
+
+.audio_player .info h6{
+  font-size: 18px;
+  font-weight: 600;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(109, 110, 138);
+}
+
+.audio_player .info p{
+  font-size: 15px;
+  margin-top: 3px;
+  color: rgb(109, 110, 138);
+}
+
+.audio_player .seek_bar{
+  float: left;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.audio_player .alt{
+  flex-direction: row !important;
+  margin-bottom: 20px;
+}
+
+.audio_player .alt .icon{
+  width: 30px !important;
+  font-size: 16px;
+}
+
+.audio_player .alt .icon i{
+  color: rgb(73, 74, 104);
+}
+
+.audio_player .seek_bar .range_slider{
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: rgb(201, 201, 201);
+  border-radius: 50px;
+  margin: 5px 0px;
+}
+
+.audio_player .seek_bar .range_slider .track{
+  float: left;
+  height: 6px;
+  border-radius: 50px;
+  background: red;
+  position: absolute;
+  left: 0;
+}
+
+.audio_player .alt .range_slider .track{
+  background: rgb(73, 74, 104) !important;
+}
+
+.audio_player .seek_bar .range{
+  width: 100%;
+  opacity: 1;
+  -webkit-appearance: none;
+  background: none;
+  height: 6px;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.audio_player .seek_bar .range::-moz-range-thumb{
+  -webkit-appearance: none;
+  width: 12px;
+  height:12px;
+  background: red;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.audio_player .alt .range::-moz-range-thumb{
+  background: rgb(73, 74, 104) !important;
+}
+
+.audio_player .seek_bar .times{
+  float: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 0px 5px;
+}
+
+.audio_player .controls{
+  float: left;
+  width: 100%;
+  height: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.audio_player .controls .buttons{
+  border: none;
+  background: none;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  float: left;
+}
+
+.audio_player .controls .play{
+  background: red;
+  border-radius: 50px;
+  width: 65px;
+  height: 65px;
+}
+
+.audio_player .controls .play i{
+  color: white;
+}
+
+.audio_player .controls .play .tri{
+  margin-left: 5px;
+}
+
+
+/* Mobile View */
+
+@media screen and (max-width: 768px) {
+  .audio_player{
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+    border-radius: 0px;
+  }
 }
