@@ -7,6 +7,8 @@ import Volume from './Volume'
 
 const Player = () => {
 
+    const [isLoading, setIsLoading] = useState(false)
+
     const [play, setPlay] = useState(false)
 
     let sound = isNaN(parseFloat(window.localStorage.getItem("zsnPlayerVolume"))) ? .5 : parseFloat(window.localStorage.getItem("zsnPlayerVolume"))
@@ -38,12 +40,16 @@ const Player = () => {
         if(count === data.length - 1){
             window.localStorage.setItem("zsnPlayerIndex", 0)
             setCurrentSong({...data[0], progress: 0})
-            setPlay(false)
         }else{
             window.localStorage.setItem("zsnPlayerIndex", count+1)
             setCurrentSong({...data[count + 1], progress: 0})
-            setPlay(false)
         }
+        refAudio.current.currentTime = (5 / 100) * refAudio.current.duration
+        setPlay(false)
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1200)
     }
 
     // Go to the previous song
@@ -53,12 +59,16 @@ const Player = () => {
         if(count === 0){
             window.localStorage.setItem("zsnPlayerIndex", data.length - 1)
             setCurrentSong({...data[data.length - 1], progress: 0})
-            setPlay(false)
+            
         }else{
             window.localStorage.setItem("zsnPlayerIndex", count-1)
             setCurrentSong({...data[count - 1], progress: 0})
-            setPlay(false)
         }
+        setPlay(false)
+        setIsLoading(true)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1200)
     }
 
     // Everything will work if this functions executes
@@ -132,6 +142,23 @@ const Player = () => {
         <audio ref={refAudio} src={currentSong?.source} onTimeUpdate={(e) => onPlaying(e)}/>
 
         <div className='audio_player'>
+
+            {
+                !isLoading ? "":
+                <div className='loading'>
+                    <div className='loader'>
+                        <p></p>
+                        <div>
+                            <span>Z</span>
+                            <span>I</span>
+                            <span>S</span>
+                            <span>A</span>
+                            <span>N</span>
+                        </div>
+                    </div>
+                    <div className='transparent'></div>
+                </div>
+            }
 
             {/* Audio volume range bar */}
 
