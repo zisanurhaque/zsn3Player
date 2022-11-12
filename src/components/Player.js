@@ -40,16 +40,22 @@ const Player = () => {
         if(count === data.length - 1){
             window.localStorage.setItem("zsnPlayerIndex", 0)
             setCurrentSong({...data[0], progress: 0})
+            refAudio.current.currentTime = (5 / 100) * refAudio.current.duration
+            setPlay(false)
+            setIsLoading(true)
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 1200)
         }else{
             window.localStorage.setItem("zsnPlayerIndex", count+1)
             setCurrentSong({...data[count + 1], progress: 0})
+            refAudio.current.currentTime = (5 / 100) * refAudio.current.duration
+            setPlay(false)
+            setIsLoading(true)
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 1200)
         }
-        refAudio.current.currentTime = (5 / 100) * refAudio.current.duration
-        setPlay(false)
-        setIsLoading(true)
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 1200)
     }
 
     // Go to the previous song
@@ -59,16 +65,20 @@ const Player = () => {
         if(count === 0){
             window.localStorage.setItem("zsnPlayerIndex", data.length - 1)
             setCurrentSong({...data[data.length - 1], progress: 0})
-            
+            setPlay(false)
+            setIsLoading(true)
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 1200)
         }else{
             window.localStorage.setItem("zsnPlayerIndex", count-1)
             setCurrentSong({...data[count - 1], progress: 0})
+            setPlay(false)
+            setIsLoading(true)
+            setTimeout(() => {
+                setIsLoading(false)
+            }, 1200)
         }
-        setPlay(false)
-        setIsLoading(true)
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 1200)
     }
 
     // Everything will work if this functions executes
