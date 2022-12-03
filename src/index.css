@@ -4,7 +4,7 @@
   margin: 0px;
   font-family: bahnschrift;
   font-weight: 300;
-  color: rgb(60, 61, 88);
+  color: rgb(255, 255, 255);
 }
 
 .container{
@@ -21,7 +21,7 @@
   float: left;
   width: 400px;
   height: 650px;
-  background: rgb(255, 255, 255);
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(56, 54, 83));
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,7 @@
   padding: 50px;
   padding-top: 40px;
   position: relative;
+  box-shadow: inset 0px 0px 10px 0px rgb(0, 0, 0);
 }
 
 .audio_player .loading{
@@ -137,6 +138,7 @@
   float: left;
   position: relative;
   overflow: hidden;
+  box-shadow: 0px 0px 5px 0px rgb(21, 194, 73);
 }
 
 .audio_player .image img{
@@ -148,7 +150,7 @@
 
 .audio_player .timeline{
   float: left;
-  color: rgb(60, 61, 88);
+  color: rgb(255, 255, 255);
   margin-top: 25px;
   font-size: 16px;
   width: 100%;
@@ -186,13 +188,13 @@
   font-size: 18px;
   font-weight: 600;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: rgb(109, 110, 138);
+  color: rgb(255, 255, 255);
 }
 
 .audio_player .info p{
   font-size: 15px;
   margin-top: 3px;
-  color: rgb(109, 110, 138);
+  color: rgb(255, 255, 255);
 }
 
 .audio_player .seek_bar{
@@ -216,7 +218,7 @@
 }
 
 .audio_player .alt .icon i{
-  color: rgb(73, 74, 104);
+  color: rgb(255, 255, 255);
 }
 
 .audio_player .seek_bar .range_slider{
@@ -227,7 +229,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  background: rgb(201, 201, 201);
+  background: rgb(255, 255, 255);
   border-radius: 50px;
   margin: 5px 0px;
 }
@@ -236,13 +238,13 @@
   float: left;
   height: 6px;
   border-radius: 50px;
-  background: red;
+  background: rgb(0, 255, 149);
   position: absolute;
   left: 0;
 }
 
 .audio_player .alt .range_slider .track{
-  background: rgb(73, 74, 104) !important;
+  background: rgb(0, 255, 149) !important;
 }
 
 .audio_player .seek_bar .range{
@@ -262,14 +264,14 @@
   -webkit-appearance: none;
   width: 12px;
   height:12px;
-  background: red;
+  background: rgb(0, 255, 149);
   border: none;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .audio_player .alt .range::-moz-range-thumb{
-  background: rgb(73, 74, 104) !important;
+  background: rgb(0, 255, 149) !important;
 }
 
 .audio_player .seek_bar .times{
@@ -306,7 +308,7 @@
 }
 
 .audio_player .controls .play{
-  background: red;
+  background: rgb(21, 194, 73);
   border-radius: 50px;
   width: 65px;
   height: 65px;
