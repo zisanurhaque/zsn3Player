@@ -30,7 +30,7 @@ const SongInfo = ({currentSong, data, play}) => {
 
             <div className='icon'>
                 {
-                    play ? <img src='/icon.gif' alt="icon"/> : <div className='ifNot'></div>
+                    play ? <img src='/icon.gif' alt=""/> : <div className='ifNot'></div>
                 }
             </div>
 
