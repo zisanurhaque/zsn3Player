@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SongInfo = ({currentSong, data}) => {
+const SongInfo = ({currentSong, data, play}) => {
   return (
     <>
 
@@ -15,9 +15,7 @@ const SongInfo = ({currentSong, data}) => {
         </div>
 
         <div className='info'>
-            <div className='icon'>
-                <i className="fa-solid fa-music"></i>
-            </div>
+            
             <div className='contents'>
 
                 {/* Displaying audio name */}
@@ -29,6 +27,13 @@ const SongInfo = ({currentSong, data}) => {
                 <p>{currentSong?.singer}</p>
 
             </div>
+
+            <div className='icon'>
+                {
+                    play ? <img src='/icon.gif' alt="icon"/> : <div className='ifNot'></div>
+                }
+            </div>
+
         </div>
     </>
   )

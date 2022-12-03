@@ -21,14 +21,14 @@
   float: left;
   width: 400px;
   height: 650px;
-  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(56, 54, 83));
+  background: linear-gradient(45deg, rgb(0, 0, 0) 50%, rgb(51, 49, 70));
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  padding: 50px;
-  padding-top: 40px;
+  padding: 40px;
+  padding-top: 30px;
   position: relative;
   box-shadow: inset 0px 0px 10px 0px rgb(0, 0, 0);
 }
@@ -138,7 +138,6 @@
   float: left;
   position: relative;
   overflow: hidden;
-  box-shadow: 0px 0px 5px 0px rgb(21, 194, 73);
 }
 
 .audio_player .image img{
@@ -155,6 +154,7 @@
   font-size: 16px;
   width: 100%;
   text-align: center;
+  padding: 5px;
 }
 
 .audio_player .info{
@@ -163,13 +163,14 @@
   height: 15%;
   border-radius: 10px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
 }
 
 .audio_player .info .contents{
   float: left;
-  width: 85%;
+  width: 100%;
+  text-align: center;
 }
 
 .audio_player .info .icon{
@@ -178,6 +179,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  width: 200px;
+  height: 50px;
+}
+
+.audio_player .info .icon .ifNot{
+  width: 90%;
+  height: 2px;
+  background: linear-gradient(to right, rgb(255, 0, 255), rgb(0, 255, 149), yellow, red, blue);
+}
+
+.audio_player .info .icon img{
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .audio_player .info .icon i{
@@ -192,7 +208,7 @@
 }
 
 .audio_player .info p{
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 3px;
   color: rgb(255, 255, 255);
 }

@@ -174,7 +174,7 @@ const Player = () => {
 
             <Volume handleVolume={handleVolume} soundIcon={soundIcon} volume={volume}/>
 
-            <SongInfo currentSong={currentSong} data={data}/>
+            <SongInfo currentSong={currentSong} data={data} play={play}/>
 
             {/* Audio seek bar */}
 
